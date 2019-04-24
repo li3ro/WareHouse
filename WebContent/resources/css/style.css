@@ -1,0 +1,80 @@
+html { 
+	background: url(../images/bg2.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+	
+#center-div {
+    top: 30%;
+    left: 28%;
+    width: 32em;
+    height: 19em;
+    border: 1px solid #ccc;
+    background:rgba(255,255,255,0.5);
+    position:fixed;
+}
+
+@media all and (min-width:960px) and (max-width: 1024px) {
+  #center-div {
+		top: 29%;
+	    left: 15%;
+	    width: 43em;
+	    height: 20em;
+	}
+}
+
+@media all and (min-width:801px) and (max-width: 959px) {
+  #center-div {
+		top: 29%;
+	    left: 11%;
+	    width: 37em;
+	    height: 20em;
+	}
+}
+
+@media all and (min-width:769px) and (max-width: 800px) {
+  #center-div {
+		top: 29%;
+	    left: 15%;
+	    width: 43em;
+	    height: 20em;
+	}
+}
+
+@media all and (min-width:569px) and (max-width: 768px) {
+  #center-div {
+		top: 30%;
+	    left: 6%;
+	    width: 33em;
+	    height: 20em;
+	}
+}
+
+@media all and (min-width:481px) and (max-width: 568px) {
+  #center-div {
+		top: 30%;
+	    left: 6%;
+	    width: 29em;
+	    height: 20em;
+	}
+}
+
+@media all and (min-width:321px) and (max-width: 480px) {
+  #center-div {
+		top: 35%;
+	    left: 6%;
+	    width: 26em;
+	    height: 18em;
+	}
+}
+
+@media all and (min-width:0px) and (max-width: 320px) {
+    #center-div {
+		top: 35%;
+	    left: 6%;
+	    width: 26em;
+	    height: 18em;
+	}
+}

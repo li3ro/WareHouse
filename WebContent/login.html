@@ -1,0 +1,69 @@
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>WareHouse - (By WeBoo © 2017)</title>
+	<link rel="stylesheet" type="text/css" href="resources/css/component.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div id="center-div">
+    	<ul class="input-list style-2 clearfix">
+          <li>
+            <input id="username" type="text" placeholder=":username" required>
+          </li>
+          <li>
+            <input id="password" type="text" placeholder=":password" required>
+          </li>
+        </ul>
+    	<button id="login" class="btn btn-1 btn-1f">Log Me In</button>
+    </div>
+    
+    <script src="resources/js/jquery-1.11.2.min.js"></script>
+    <script src="resources/js/modernizr.custom.js"></script>
+    <script>
+ 
+    window.onload = function() {
+ 		/* alert( "Welcome! Please authenticate yourself" ); */
+	};
+    $(document).ready(function() {
+     	$("#login").click(function( event ) {
+     		var username = $("#username").val();
+     		var password = $("#password").val();
+
+     	    $.ajax
+     	    ({
+     	        url: 'login',
+     	        data: {username:username , password:password},
+     	        type: 'POST',
+				dataType: "json",
+     	       	beforeSend:function(){
+                	jQuery('#login').html('<div class="loading"><img src="resources/images/ajax_loader.gif" alt="Loading..." /></div>');
+               	},
+     	        success: function(response)
+     	        {
+     	        	console.log(response);
+     	        	if (response.status === 'OKAY') {
+     	        		alert('Authenticated!!!');
+     	        		window.location.href = "index.html";
+     	            }
+     	            else {
+     	        	   alert('Not Authenticated!!!');
+     	        	   //alert('data.form='+data.form);
+     	               // data.form contains the HTML for the replacement form
+     	               //$("#login_form").replaceWith(data.form);
+     	        	}
+     	        },
+                error:function(request, status, error){
+                	alert(request.responseText);
+                	
+                }
+     	    });
+ 		});
+     	
+ 	});
+ 
+    </script>
+</body>
+</html>

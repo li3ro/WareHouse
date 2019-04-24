@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<script src="resources/js/jquery-1.11.2.min.js"></script>
+	<title>Main page</title>
+</head>
+<body>
+	Some Body goes here..
+	</br>
+	<button id="logout">Logout</button>
+
+</body>
+
+<script>
+	$("#logout").click(function( event ) {
+	
+	    $.ajax
+	    ({
+	    	url: 'logout',
+	        type: 'POST',
+	        dataType: "json",
+	        success: function(response)
+	        {
+	        	//alert(response.status);
+	        	if (response.status === 'OKAY') {
+	        		alert("Logged out..");
+	        		window.location.href = "login.html";
+	            }
+	            else {
+	        	   alert('Failed to logout. Please contact the Administrators.');
+	        	}
+	        },
+	       	error:function(request, status, error) {
+	       		alert(request.responseText);
+	       	}
+	    });
+	});
+</script>
+</html>
